@@ -47,8 +47,8 @@ sudo apt-get install -y wget rsync xorriso
 
 1. **Clone the repository** (or download the script):
 ```bash
-git clone https://github.com/yourusername/almalinux-kickstart-builder.git
-cd almalinux-kickstart-builder
+git clone https://github.com/GenXStreamer/AlmaLinuxKickstartBuilder.git
+cd AlmaLinuxKickstartBuilder
 ```
 
 2. **Make the script executable:**
@@ -57,24 +57,7 @@ chmod +x build.sh
 ```
 
 3. **Create your Kickstart configuration:**
-```bash
-cat > ks.cfg << 'EOF'
-# Example minimal Kickstart configuration
-text
-network --bootproto=dhcp --device=link --activate
-rootpw --plaintext rootpassword
-firewall --disabled
-selinux --disabled
-timezone UTC
-bootloader --location=mbr --append="rhgb quiet"
-zerombr
-clearpart --all --initlabel
-autopart --type=lvm
-%packages
-@core
-%end
-EOF
-```
+There is a ks-example.cfg to get you going
 
 ## Usage
 
